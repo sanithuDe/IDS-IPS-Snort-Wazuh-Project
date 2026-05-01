@@ -1,0 +1,33 @@
+<!-- Local rules -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!-- Example -->
+
+  <!--
+  Dec 10 01:02:02 host sshd[1234]: Failed none for root from 1.1.1.1 port 1066 ssh2
+  -->
+<group name="snort-block,ids,">
+
+  <rule id="100501" level="5">
+    <match>snort-block: ICMP_BLOCKED</match>
+    <description>ICMP Ping Attack Blocked</description>
+  </rule>
+
+  <rule id="100502" level="8">
+    <match>snort-block: ICMP_FLOOD_BLOCKED</match>
+    <description>ICMP Flood Attack Blocked</description>
+  </rule>
+
+  <rule id="100503" level="10">
+    <match>snort-block: NMAP_BLOCKED</match>
+    <description>Nmap Scan Attack Blocked</description>
+  </rule>
+
+  <rule id="100504" level="10">
+    <match>snort-block: PORTSCAN_BLOCKED</match>
+    <description>Port Scan Attack Blocked</description>
+  </rule>
+
+</group>
